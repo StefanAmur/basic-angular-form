@@ -1,0 +1,25 @@
+<!-- {{ formName.value | json }} -->
+{{ friend | json }}
+<section class="main">
+  <form action="" #formName="ngForm">
+    <input type="text" name="firstName" #firstName="ngModel" [(ngModel)]="friend.firstName" required
+      [class.error]="firstName.invalid && firstName.touched">
+    <input type="text" name="lastName" #lastName="ngModel" [(ngModel)]="friend.lastName" required
+      [class.error]="lastName.invalid && lastName.touched">
+    <input type="text" name="email" #email="ngModel" [(ngModel)]="friend.email" required
+      [class.error]="email.invalid && email.touched">
+    <input type="text" name="phone" #phone="ngModel" [(ngModel)]="friend.phone" required
+      [class.error]="phone.invalid && phone.touched">
+    <select name="language" #language="ngModel" [(ngModel)]="friend.language" required
+      [class.error]="language.invalid && language.touched">
+      <option value="HTML">HTML</option>
+      <option value="JavaScript">JavaScript</option>
+      <option value="PHP">PHP</option>
+      <option value="React">React</option>
+      <option value="Angular">Angular</option>
+    </select>
+    <button class="btn">Submit</button>
+  </form>
+</section>
+
+<router-outlet></router-outlet>
